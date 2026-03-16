@@ -44,13 +44,13 @@ https://minomeow12.github.io/webdev-portfolio/
 
 Some outside resources I used include:
 
-•  Bootstrap 5.3 - Documentation https://getbootstrap.com/docs/5.3/
-•  Bootstrap Icons - https://icons.getbootstrap.com/
-•  Google Fonts - Playfair Display + DM Sans — https://fonts.google.com/
-•  MDN Web Docs  - IntersectionObserver, requestAnimationFrame, CSS custom properties — https://developer.mozilla.org
-•  Unsplash - project card placeholder image - https://unsplash.com
-•  imgix CDN - project card images (haunted house, chat app)
-•  CSS-Tricks - aspect-ratio reference - https://css-tricks.com/almanac/properties/a/aspect-ratio/
+- Bootstrap 5.3 - Documentation https://getbootstrap.com/docs/5.3/
+- Bootstrap Icons - https://icons.getbootstrap.com/
+- Google Fonts - Playfair Display + DM Sans — https://fonts.google.com/
+- MDN Web Docs  - IntersectionObserver, requestAnimationFrame, CSS custom properties — https://developer.mozilla.org
+-  Unsplash - project card placeholder image - https://unsplash.com
+-  imgix CDN - project card images (haunted house, chat app)
+-  CSS-Tricks - aspect-ratio reference - https://css-tricks.com/almanac/properties/a/aspect-ratio/
 
 
 ## Author
