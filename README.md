@@ -38,7 +38,7 @@ https://github.com/minomeow12/webdev-portfolio
 
 ## Deployed Link
 
-(https://minomeow12.github.io/webdev-portfolio/)
+https://minomeow12.github.io/webdev-portfolio/
 
 ## Sources
 
