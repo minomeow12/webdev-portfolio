@@ -44,7 +44,7 @@ const revealEls = document.querySelectorAll(".reveal");
 
 const revealObserver = new IntersectionObserver(
   (entries) => {
-    entries.forEach((entry, i) => {
+    entries.forEach((entry) => {
       if (entry.isIntersecting) {
         // Stagger sibling cards
         const delay = entry.target.closest(".projects-grid")
@@ -69,8 +69,8 @@ const taglineEl = document.querySelector(".hero-tagline");
 
 if (taglineEl) {
   const lines = [
-    "Crafting thoughtful digital experiences —",
-    "one pixel, one cup of coffee at a time.",
+    "a CS student who enjoys building with code,",
+    "and bonding over film, fashion, and nerdy favorites too.",
   ];
   const fullText = lines.join("\n");
 
@@ -191,3 +191,60 @@ document.querySelectorAll('a[href^="#"]').forEach((link) => {
     target.focus({ preventScroll: true });
   });
 });
+
+/*  Paw print cursor trail */
+const PAW = "🐾";
+const MAX_PAWS = 10;
+const paws = [];
+let lastX = 0;
+let lastY = 0;
+let pawTimeout = null;
+
+const spawnPaw = (x, y) => {
+  const el = document.createElement("span");
+  el.textContent = PAW;
+  el.setAttribute("aria-hidden", "true");
+  Object.assign(el.style, {
+    position: "fixed",
+    left: `${x}px`,
+    top: `${y}px`,
+    fontSize: "0.85rem",
+    pointerEvents: "none",
+    zIndex: "9999",
+    opacity: "0.55",
+    transform: "translate(-50%, -50%) rotate(var(--r))",
+    "--r": `${(Math.random() - 0.5) * 40}deg`,
+    transition: "opacity 0.8s ease, transform 0.8s ease",
+    userSelect: "none",
+  });
+  document.body.appendChild(el);
+
+  // Fade out and remove
+  requestAnimationFrame(() => {
+    el.style.opacity = "0";
+    el.style.transform = `translate(-50%, -80%) rotate(${(Math.random() - 0.5) * 50}deg)`;
+  });
+
+  setTimeout(() => el.remove(), 900);
+
+  paws.push(el);
+  if (paws.length > MAX_PAWS) paws.shift();
+};
+
+document.addEventListener(
+  "mousemove",
+  (e) => {
+    const dx = e.clientX - lastX;
+    const dy = e.clientY - lastY;
+    const dist = Math.sqrt(dx * dx + dy * dy);
+
+    if (dist > 40) {
+      lastX = e.clientX;
+      lastY = e.clientY;
+
+      clearTimeout(pawTimeout);
+      pawTimeout = setTimeout(() => spawnPaw(e.clientX, e.clientY), 60);
+    }
+  },
+  { passive: true },
+);

@@ -20,10 +20,7 @@
 
   --font-serif: "Playfair Display", Georgia, serif;
   --font-sans: "DM Sans", sans-serif;
-  --font-weight-normal: 300;
-  --font-weight-medium: 500;
 
-  --radius: 0px;
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
   --transition: 0.45s var(--ease-out);
   --transition-fast: 0.25s var(--ease-out);
@@ -142,6 +139,14 @@ h4 {
   color: var(--secondary);
   padding: 0.25rem 0;
   position: relative;
+}
+
+.navbar-nav .nav-link.active {
+  color: var(--foreground);
+}
+
+.navbar-nav .nav-link.active::after {
+  width: 100%;
 }
 
 .navbar-nav .nav-link::after {
@@ -828,4 +833,101 @@ h4 {
 .footer-social a:hover,
 .footer-social a:focus {
   color: var(--accent);
+}
+
+/* Reveal  */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.7s var(--ease-out),
+    transform 0.7s var(--ease-out);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/*  Keyframes  */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(-50%) translateX(0);
+  }
+  50% {
+    transform: translateY(calc(-50% - 14px)) translateX(6px);
+  }
+}
+@keyframes growLine {
+  from {
+    height: 0;
+  }
+  to {
+    height: 80px;
+  }
+}
+
+/* Responsive  */
+@media (max-width: 991.98px) {
+  .hero-cat {
+    right: 2%;
+    width: 90px;
+    opacity: 0.35;
+  }
+  .hero-coffee {
+    display: none;
+  }
+  .section-about,
+  .section-experience,
+  .section-projects,
+  .section-contact {
+    padding: 5rem 0;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  .project-card:last-child:nth-child(odd) {
+    grid-column: auto;
+  }
+  .project-card:last-child:nth-child(odd) .project-img-wrap {
+    aspect-ratio: 4 / 3;
+  }
+
+  .timeline {
+    padding-left: 1rem;
+  }
+  .section-experience .col-lg-4 {
+    margin-bottom: 2.5rem;
+  }
+  .scroll-line {
+    display: none;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .hero-name {
+    font-size: 3.6rem;
+  }
+  .section-title {
+    font-size: 2rem;
+  }
+}
+
+/*Focus visible  */
+:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 3px;
 }
