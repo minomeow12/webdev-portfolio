@@ -365,6 +365,107 @@
           </div>
         </div>
       </section>
+      
+        <!--  CONTACT -->
+      <section id="contact" class="section-contact" aria-label="Contact">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-7 text-center">
+              <p class="section-label">04 — Contact</p>
+              <h2 class="section-title">Let's<br /><em>connect</em></h2>
+              <p class="contact-intro">
+                Have a project in mind, or just want to say hello? I'd love to
+                chat!
+              </p>
+            </div>
+          </div>
+
+          <div class="row justify-content-center mt-5">
+            <div class="col-lg-6">
+              <form id="contactForm" novalidate aria-label="Contact form">
+                <div class="form-field">
+                  <label for="name" class="form-label-custom">Name</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    class="form-input"
+                    placeholder="Your name"
+                    required
+                    autocomplete="name"
+                  />
+                  <span
+                    class="field-error"
+                    id="nameError"
+                    role="alert"
+                    aria-live="polite"
+                  ></span>
+                </div>
+
+                <div class="form-field">
+                  <label for="email" class="form-label-custom">Email</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    class="form-input"
+                    placeholder="youremail@email.com"
+                    required
+                    autocomplete="email"
+                  />
+                  <span
+                    class="field-error"
+                    id="emailError"
+                    role="alert"
+                    aria-live="polite"
+                  ></span>
+                </div>
+
+                <div class="form-field">
+                  <label for="message" class="form-label-custom">Message</label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    class="form-input form-textarea"
+                    placeholder="Tell me about your project…"
+                    required
+                    rows="5"
+                  ></textarea>
+                  <span
+                    class="field-error"
+                    id="messageError"
+                    role="alert"
+                    aria-live="polite"
+                  ></span>
+                </div>
+
+                <button
+                  type="submit"
+                  class="submit-btn"
+                  aria-label="Send message"
+                >
+                  <span class="btn-text">Send Message</span>
+                  <span class="btn-icon" aria-hidden="true"
+                    ><i class="bi bi-arrow-right"></i
+                  ></span>
+                </button>
+
+                <div
+                  id="formSuccess"
+                  class="form-success"
+                  role="status"
+                  aria-live="polite"
+                  hidden
+                >
+                  <i class="bi bi-check-circle" aria-hidden="true"></i> Message
+                  sent — I'll be in touch soon!
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
 
        <!-- FOOTER  -->
     <footer class="site-footer" role="contentinfo">
